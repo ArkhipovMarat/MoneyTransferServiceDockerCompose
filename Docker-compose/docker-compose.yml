@@ -1,0 +1,12 @@
+version: "3"
+services:
+  application:
+    build: ./services/money_transfer_service
+    ports:
+      - "5500:5500"
+  client:
+    build: ./services/card-transfer
+    ports:
+      - "3000:3000"
+    depends_on:
+      - application
